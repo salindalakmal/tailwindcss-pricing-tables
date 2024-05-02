@@ -1,0 +1,1 @@
+var toggleThemeMode=function(){document.querySelectorAll("[data-theme-mode]").forEach((function(e){"dark"===e.getAttribute("data-theme-mode")?e.setAttribute("data-theme-mode","light"):e.setAttribute("data-theme-mode","dark")}))};
