@@ -1,21 +1,26 @@
 
-(function () {
 
-// const tabEls = document.querySelectorAll('button[data-bs-toggle="tab"]')
 
-// tabEls.forEach(tabEl => {
-//     tabEl.addEventListener('shown.bs.tab', event => {
-//         let targetClass = event.target.getAttribute('data-bs-target')
-//         let relatedTargetClass = event.relatedTarget.getAttribute('data-bs-target')
-//         let targetEls = document.getElementsByClassName(targetClass);
-//         let relatedEls = document.getElementsByClassName(relatedTargetClass);
-//         for (let targetEl of targetEls) {
-//             targetEl.classList.add('active');
-//         }
-//         for (let relatedEl of relatedEls) {
-//             relatedEl.classList.remove('active');
-//         }
-//     })
-// })
 
-})();
+
+const priceToggle = (element, target) => {
+    const priceToggleBtns = document.querySelectorAll('.btn-price-toggle')
+    for (let priceToggleBtn of priceToggleBtns) {
+        if(priceToggleBtn == element){
+            priceToggleBtn.classList.add('bg-teal-500', 'text-white', 'active');
+            priceToggleBtn.classList.remove('text-gray-500');
+        } else{
+            priceToggleBtn.classList.remove('bg-teal-500', 'text-white', 'active');
+            priceToggleBtn.classList.add('text-gray-500');
+        }
+    }
+    let toggleEls = document.getElementsByClassName('price-toggle');
+    for (let toggleEl of toggleEls) {
+        if(toggleEl.classList.contains(target)){
+            toggleEl.classList.remove('hidden');
+        } else{
+            toggleEl.classList.add('hidden');
+        }
+    }
+}
+
